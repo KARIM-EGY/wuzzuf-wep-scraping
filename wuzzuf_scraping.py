@@ -40,7 +40,7 @@ while True:
     # Extracting the text from the lists above
     for i in range(len(jobs)):
         job_title.append(jobs[i].text.strip().replace('-', ''))
-        companies_name.append(company_name[i].text.strip())
+        companies_name.append(company_name[i].text.strip().replace('-', ''))
         companies_location.append(company_location[i].text.strip())
         skills.append(job_skills[i].text.strip())
         links.append(jobs[i].find("a").attrs['href'])
@@ -52,7 +52,7 @@ while True:
     if page_number > jobs_count // 15:
         print('Pages Ended')
         break
-    
+
     print('Page switched')
 
     # Be polite and wait a bit before the next request
