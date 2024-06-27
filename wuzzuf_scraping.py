@@ -44,5 +44,5 @@ lists = [job_title, companies_name, companies_location, skills, date_posted]
 data = zip_longest(*lists)
 with open(r'D:\Karim\bootcamp\wuzzuf_jobs.csv', 'w', encoding="utf-8") as file:
     writer = csv.writer(file)
-    writer.writerow(['Job Title', 'Company Name', 'Job location', 'skills required', 'Date posted'])
+    writer.writerow(['Job Title', 'Company Name', 'Job location', 'Skills required', 'Date posted'])
     writer.writerows(data)
