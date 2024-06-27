@@ -17,10 +17,10 @@ page = requests.get(url)
 content = page.content
 soup = BeautifulSoup(content, 'lxml')  # clarify the html code to be readable
 ## extracting all jobs links from the page
-jobs = soup.find_all('h2', {'class': 'css-m604qf'})
-company_name = soup.find_all('a', {'class': 'css-17s97q8'})
-company_location = soup.find_all('span', {'class': 'css-5wys0k'})
-job_skills = soup.find_all('div', {'class': 'css-y4udm8'})
+jobs = soup.find_all('h2', {'class': 'css-m604qf'}) # extracting the job title
+company_name = soup.find_all('a', {'class': 'css-17s97q8'}) # extracting the company name
+company_location = soup.find_all('span', {'class': 'css-5wys0k'}) # extracting the job location
+job_skills = soup.find_all('div', {'class': 'css-y4udm8'}) # extracting the skills required
 
 ## extracting the text from the lists above
 for i in range(len(company_location)):
